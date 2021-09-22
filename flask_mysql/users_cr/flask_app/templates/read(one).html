@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Specific User</title>
+</head>
+<body>
+    <div>
+        <h1> User {{user.id}} </h1>
+        <a href="/users">Home</a>
+    <div style = "border: black solid 1px; width: 350px;">
+        <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Email: {{user.email}} </p>
+        <p>Created On: {{ user.created_at }}</p>
+        <p>Last Updated On: {{ user.updated_at }} </p>
+    </div>
+    <a href="/users/{{ user.id }}/edit">Edit</a> | <a href="{{ url_for ('delete_user', id = user.id) }}">Delete</a>
+</body>
+</html>

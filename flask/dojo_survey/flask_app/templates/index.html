@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = {{ url_for('static', filename='style.css')}}>
+    <title>Dojo Survey</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class = "container">
+        <h1>Dojo Survey</h1>
+        <form action="/users" method = "POST">
+            <label for = "name" name = "name">Your Name</label>
+            <input type="text" id = "name" name = "name">
+            <br>
+            <label for="locations">Dojo Location</label>
+            <select name = "location" id = "locations">
+                <option value = "Chicago">Chicago</option>
+                <option value = "St. Louis">St. Louis</option>
+                <option value = "Tampa Bay">Tampa Bay</option>
+                <option value = "San Jose">San Jose</option>
+            </select>
+            <br>
+            <label for="Favorite Language">Favorite Language</label>
+            <select name="language" id="languages">
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value = "C#">C#</option>
+                <option value="Java">Java</option>
+            </select>
+            <br>
+            <label for="comment">Comment (optional):</label>
+            <input type="textbox" id = "comment" name = "comment">
+            <br>
+            <input type="submit" value = "comment" id = "submit">
+        </form>
+    </div>
+</body>
+</html>

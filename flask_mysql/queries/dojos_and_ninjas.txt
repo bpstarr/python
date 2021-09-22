@@ -1,0 +1,29 @@
+INSERT INTO dojos (name)
+VALUES ( 'Lin Quei'), ('Shirai Ryu'), ('Cobra Kai');
+
+
+SET SQL_SAFE_UPDATES=0;
+DELETE FROM dojos;
+
+INSERT INTO dojos (name)
+VALUES ( 'Lin Quei'), ('Shirai Ryu'), ('Cobra Kai');
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Sub', 'Zero', 30, 4), ('Bi','Han', 35, 4), ('Frost', 'Zero', 18, 4);
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Hanzo', 'Hasashi', 30, 5), ('Takeda','Takahashi', 18, 5), ('Satoshi', 'Hasashi', 18, 5);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id)
+VALUES ('Johnny', 'Lawrence', 40, 6), ('John' ,'Kreese',65,6), ('Eli', 'Moskowitz',18,6);
+
+SELECT * FROM ninjas
+WHERE dojo_id = 4
+
+SELECT * FROM ninjas 
+WHERE dojo_id = 6;
+
+SELECT dojos.name FROM dojos
+JOIN ninjas ON dojos.id = ninjas.dojo_id
+ORDER BY ninjas.id DESC
+LIMIT 1;

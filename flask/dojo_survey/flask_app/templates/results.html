@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = {{ url_for('static', filename='style.css')}}>
+    <title>Results</title>
+</head>
+<body>
+    <div class = "container">
+        <h1>Results:</h1>
+        <table>
+            <tr>
+                
+                <th>Name:</th>
+                {% for dojo_answer in dojo_answers %}
+                <td>{{ dojo_answer.name}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Location:</th>
+                {% for dojo_answer in dojo_answers %}
+                <td>{{dojo_answer.location}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Favorite Language:</th>
+                {% for dojo_answer in dojo_answers %}
+                <td>{{dojo_answer.language}}</td>
+                {% endfor %}
+
+            </tr>
+            <tr>
+                <th>Comment:</th>
+                {% for dojo_answer in dojo_answers %}
+                <td>{{dojo_answer.comment}}</td>
+                {% endfor %}
+            </tr>
+        </table>
+        <form action="/">
+            <button>Go Back</button>
+        </form>
+    </div>
+</body>
+</html>

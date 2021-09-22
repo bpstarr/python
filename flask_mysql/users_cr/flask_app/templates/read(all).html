@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>All Users</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Email </th>
+                <th> Created At </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for one_user in users %}
+            <tr>
+                <td> {{one_user.id}} </td>
+                <td> {{one_user.first_name}} </td>
+                <td> {{one_user.last_name}} </td>
+                <td> {{one_user.email}}</td>
+                <td> {{one_user.created_at}} </td>
+                <td><a href="{{ url_for('show_single_user', id = one_user.id)}}">Show </a><a href="{{ url_for('update_single_user',id = one_user.id) }}">Edit </a><a href="{{ url_for('delete_user', id = one_user.id) }}"> Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+    <a href = "users/new">Add a New User</a>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+* {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    background-color: rgb(124, 124, 124);
+}
+.container {
+    width: 400px;
+    height: 400px;
+}
+#name {
+    margin-left: 65px;
+}
+#locations {
+    margin-left: 46px;
+}
+#languages {
+    margin-left: 19px;
+}
+#comment {
+    margin-left: 4px;
+}
+#submit {
+    background-color: red;
+    color:white;
+    margin-left: 150px;
+}
+#submit:hover {
+    background-color: rgb(170, 36, 12);
+}
+button {
+    background-color: red;
+    color:white;
+    margin-left: 150px;
+}
+button:hover {
+    background-color: rgb(170, 36, 12);
+}
+h1 {
+    text-align: center;
+}

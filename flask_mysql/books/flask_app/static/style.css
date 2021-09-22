@@ -1,0 +1,15 @@
+* {
+    margin: 0 auto;
+    border: red solid 1px;
+}
+#container {
+    display:flex;
+    justify-content: space-evenly;
+    width: 1200px;
+}
+.boxes {
+    width:600px
+}
+li {
+    list-style: none;
+}

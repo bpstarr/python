@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>dashboard</title>
+</head>
+<body>
+    <h1>Welcome {{user.first_name}}</h1>
+    <h4>These are the recipes</h4>
+    <table>
+        <thead>
+            <th>name</th>
+            <th>Under 30 minutes?</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+                <tr>
+                    <td>{{ recipe.name }}</td>
+                    {% if recipe.made_in_under_30mins == 1 %}
+                    <td>Yes</td>
+                    {% else %}
+                    <td>No</td>
+                    {% endif %}
+                    <td>
+                        <a href ="/recipe/{{recipe.id}}">View Instructions</a>
+                        {% if recipe.user_id == session.user_id %}
+                        <a href = "/edit/recipe/{{recipe.id}}">edit</a>
+                        <a href = "/destroy/recipe/{{recipe.id}}">delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

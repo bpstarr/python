@@ -1,0 +1,45 @@
+* {
+    margin: 0 auto;
+    background-color: darkslategrey;
+}
+p {
+    text-align: center;
+    color:orange;
+    margin-top: 10px;
+}
+#container {
+    width: 300px;
+}
+
+form {
+    display:inline-block;
+}
+h1 {
+    text-align:center;
+    color:rgb(6, 119, 172)
+}
+
+#click{ 
+    background-color: rgb(65, 65, 255);
+    color: lightgray;
+    margin-left: 65px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    border: rgb(150, 143, 197) solid 3px;
+}
+#click:hover {
+    background-color: darkblue;
+}
+#reset {
+    background-color: rgba(255, 0, 0, 0.664);
+    color: lightgray;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    border: rgb(187, 97, 97) solid 3px;
+}
+#reset:hover {
+    background-color: rgba(139, 0, 0, 0.356);
+}

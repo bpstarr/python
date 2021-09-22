@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit User {{ user.id }}</h1>
+    <form action="/edit_user/{{ user.id }}" method="POST">
+        <div class="form-group">
+            <label for="fname">First Name: </label>
+            <input type="text" name="first_name" value="{{ user.first_name }}" > 
+            <label for="lname">Last Name: </label>
+            <input type="text" name="last_name" value ="{{ user.last_name }}"> 
+            <label for="email">Email: </label>
+            <input type="text" name = "email" value = "{{ user.email }}">  
+            <br>
+            <input type= "submit" value = "Update">
+            <a href="/users/{{ user.id }}">Show User</a>
+        </div>
+    </form>
+    
+</body>
+</html>

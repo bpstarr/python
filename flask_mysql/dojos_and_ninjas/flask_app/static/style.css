@@ -1,0 +1,20 @@
+*{
+    border: red solid 2px;
+    margin: 0 auto;
+}
+#container {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+} 
+.boxes {
+    width:300px;
+    margin-top: 5px;
+}
+h1 {
+    margin-bottom: 5px;
+}
+li {
+    list-style:none;
+    text-align: left; 
+}

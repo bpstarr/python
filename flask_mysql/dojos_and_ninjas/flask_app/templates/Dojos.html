@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static',filename = 'style.css') }}">
+    <title>dojos</title>
+</head>
+<body>
+    <div id = "container">
+    <div class = "boxes">
+        <h1>New Dojo</h1>
+        <form action="/create_new_dojo" method="POST">
+            <label for="name">name</label>
+            <input type="text" name="name" >
+            <input type="submit" value="Create New Dojo">
+        </form>
+    </div>
+        <div class = "boxes">
+            <h1>All Dojos</h1>
+            {% for one_dojo in dojos %}
+            <ul>
+                <li><a href="{{ url_for('show_dojo_and_ninjas', id = one_dojo.id) }}">{{ one_dojo.name }}</a> </li>
+                <br>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="/create_new_ninja">Create a New Ninja</a>
+    
+</body>
+</html>

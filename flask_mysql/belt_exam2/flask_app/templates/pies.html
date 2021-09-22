@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Py Derby</title>
+</head>
+<body>
+    <nav>
+        <a href="/dashboard">Dashboard</a> 
+        <a href="/logout">Logout</a>
+    <h1>PyPie Derby</h1>
+    <table class ="table">
+        <thead>
+            <th>Name</th>
+            <th>PyPie By</th>
+            <th>votes</th>
+        </thead>
+        <tbody>
+            {% for pie in all_pies_with_users %}
+            <tr>
+                <td><a href="/show/{{pie.id}}">{{ pie.name }}</a></td>
+                <td> {{ pie.creator.first_name }}</td>
+                <td> {{ pie.votes }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

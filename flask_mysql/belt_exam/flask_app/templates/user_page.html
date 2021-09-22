@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>User Page</title>
+</head>
+<body>
+    <div class="container bg-info col-5 pt-3">
+        <nav class = "d-flex justify-content-between align-items-center col-12">
+            <h1 class = "text-center">Welcome {{users.first_name}}</h1>
+            <div class = "d-flex col-5 justify-content-around">
+                <a href="/dashboard" class = "text-warning">Dashboard</a>
+                <a href="/logout" class = "btn btn-danger">logout</a>
+            </div>
+        </nav>
+        <h1>{{users.first_name}}'s thoughts</h1>
+            {% for one_thought in thoughts %}
+            <p>{{ one_thought.thought }}</p>
+            {% endfor %}
+            <p>Number of likes: {{thoughts|length}}</p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show and Vote</title>
+</head>
+<body>
+    <nav>
+        <a href="/dashboard">Dashboard</a> 
+        <a href="/logout">Logout</a>
+    <h1>Pie Latte by {{ user_with_latte.creator.first_name }}</h1>
+    <p>{{user_with_latte.name}} and {{ user_with_latte.filling }} with a {{ user_with_latte.crust }}</p>
+        
+    <form action="/vote/{{user_with_latte.id}}" method = 'POST'>
+        <input type="hidden" name="id" value = "{{ user_with_latte.id }}">
+        <input type="submit" name="/vote/{{user_with_latte.id}}" value = "Cast a Vote">
+    </form>
+    
+</body>
+</html>
